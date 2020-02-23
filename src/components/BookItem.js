@@ -36,9 +36,15 @@ export class BookItem extends Component {
         <div>
           <h2 style={{ marginBottom: 0 }}>{title.rendered}</h2>
           <small>
-            Review by <strong>{author}</strong>
+            <p>
+              Review by <strong>{author}</strong>
+            </p>
           </small>
-          <img style={{ width: "100%" }} src={imgUrl} alt={title.rendered} />
+          <img
+            style={{ width: "100%", maxWidth: "30rem", margin: "auto" }}
+            src={imgUrl}
+            alt={title.rendered}
+          />
           <div dangerouslySetInnerHTML={{ __html: excerpt.rendered }} />
           <Link to={`/book/${id}`}>Read Review</Link>
           <hr />
