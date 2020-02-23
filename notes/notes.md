@@ -11,3 +11,15 @@ Is what is instructed in the video but it didn't work for me even after uninstal
 I was able to get up and running with Yarn
 
 `yarn create react-app my-app`
+
+****
+
+## Setting the proxy
+
+In the video it looks like the line 
+
+`"proxy":"http://localhost:8000"`
+
+is inside the `"browserslist"` value in `package.json`
+
+Keeping it there caused a 404 error when I made the axios call. I moved that line up to the top level (under `"private": true,` for me) and now my data is populating.
