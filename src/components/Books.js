@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import BookItem from "./BookItem";
+import { Flex } from "rebass";
 
 export class Books extends Component {
   state = {
@@ -24,11 +25,11 @@ export class Books extends Component {
     const { books, isLoaded } = this.state;
     if (isLoaded) {
       return (
-        <div>
+        <Flex justifyContent="center" flexWrap="wrap">
           {books.map(book => (
             <BookItem key={book.id} book={book} />
           ))}
-        </div>
+        </Flex>
       );
     }
     return <h3>Loading...</h3>;

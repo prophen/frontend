@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Card, Image, Heading } from "rebass";
 
 export class BookItem extends Component {
   state = {
@@ -33,22 +34,22 @@ export class BookItem extends Component {
     const { author, imgUrl, isLoaded } = this.state;
     if (isLoaded) {
       return (
-        <div>
-          <h2 style={{ marginBottom: 0 }}>{title.rendered}</h2>
+        <Card
+          sx={{
+            maxWidth: 500,
+            minWidth: 300
+          }}
+        >
+          <Heading>{title.rendered}</Heading>
           <small>
             <p>
               Review by <strong>{author}</strong>
             </p>
           </small>
-          <img
-            style={{ width: "100%", maxWidth: "30rem", margin: "auto" }}
-            src={imgUrl}
-            alt={title.rendered}
-          />
+          <Image src={imgUrl} alt={title.rendered} />
           <div dangerouslySetInnerHTML={{ __html: excerpt.rendered }} />
           <Link to={`/book/${id}`}>Read Review</Link>
-          <hr />
-        </div>
+        </Card>
       );
     }
     return null;
