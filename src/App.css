@@ -13,13 +13,26 @@ body {
   font-family: Roboto;
 }
 
+.header {
+  border-bottom: 1px solid #f9f9f9;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.03) 0 2px 5px 0;
+  box-sizing: border-box;
+  display: block;
+  height: 150px;
+  opacity: 1;
+  width: 100%;
+  margin: 0;
+  top: 0;
+}
+
 .nav-links > li {
   display: inline;
   list-style: none;
 }
 
 .nav-links > li > a {
-  color: white;
+  color: black;
   font-size: 1.2rem;
   margin-left: 1rem;
   text-decoration: none;

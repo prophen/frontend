@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
-
+import { Button, Box } from "rebass";
+import { Input, Label } from "@rebass/forms";
 export class Login extends Component {
   state = {
     username: "",
@@ -60,33 +61,29 @@ export class Login extends Component {
     } else {
       return (
         <>
-          <form onSubmit={this.onFormSubmit}>
-            <label className="form-group">
-              Username:
-              <input
-                type="text"
-                className="form-control"
-                name="username"
-                value={username}
-                onChange={this.handleOnChange}
-              />
-            </label>
+          <Box as="form" onSubmit={this.onFormSubmit}>
+            <Label htmlFor="username">Username:</Label>
+            <Input
+              width={300}
+              type="text"
+              name="username"
+              value={username}
+              onChange={this.handleOnChange}
+            />
+
             <br />
-            <label className="form-group">
-              Password:
-              <input
-                type="password"
-                className="form-control"
-                name="password"
-                value={password}
-                onChange={this.handleOnChange}
-              />
-            </label>
+            <Label htmlFor="password">Password:</Label>
+            <Input
+              width={300}
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleOnChange}
+            />
+
             <br />
-            <button className="btn btn-primary" type="submit">
-              Login
-            </button>
-          </form>
+            <Button type="submit">Login</Button>
+          </Box>
         </>
       );
     }
